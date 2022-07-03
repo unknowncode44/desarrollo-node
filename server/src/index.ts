@@ -1,5 +1,7 @@
+import cors from 'cors';
 import express, {Application} from 'express'
-import indexRouter from './routes/indexRoutes'
+import morgan from 'morgan';
+import clientsRoutes from './routes/clientsRoutes';
 
 class Server {
     public app: Application;
@@ -11,11 +13,14 @@ class Server {
     }
 
     config(): void{
-        this.app.set('port', 3000);   
+        this.app.set('port', 3000);
+        this.app.use(morgan('dev'));
+        this.app.use(cors());
+        this.app.use(express.json())
     }
 
     routes(): void {
-        this.app.use(indexRouter)
+        this.app.use(clientsRoutes)
     }
 
     start(){
