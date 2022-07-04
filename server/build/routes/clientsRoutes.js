@@ -7,7 +7,7 @@ class IndexClientes {
         this.config();
     }
     config() {
-        this.router.get('/', (req, res) => res.send('Hola Mundo'));
+        this.router.get('/hola', (req, res) => res.send('Hola Mundo'));
     }
 }
 const clientsRoutes = new IndexClientes();

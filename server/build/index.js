@@ -7,6 +7,7 @@ const cors_1 = __importDefault(require("cors"));
 const express_1 = __importDefault(require("express"));
 const morgan_1 = __importDefault(require("morgan"));
 const clientsRoutes_1 = __importDefault(require("./routes/clientsRoutes"));
+const database_1 = __importDefault(require("./database"));
 class Server {
     constructor() {
         this.app = (0, express_1.default)();
@@ -21,6 +22,9 @@ class Server {
     }
     routes() {
         this.app.use(clientsRoutes_1.default);
+    }
+    startDb() {
+        database_1.default.getConnection();
     }
     start() {
         this.app.listen(this.app.get('port'), () => {

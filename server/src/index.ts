@@ -2,6 +2,7 @@ import cors from 'cors';
 import express, {Application} from 'express'
 import morgan from 'morgan';
 import clientsRoutes from './routes/clientsRoutes';
+import pool from './database';
 
 class Server {
     public app: Application;
@@ -10,6 +11,7 @@ class Server {
         this.app = express();
         this.config()
         this.routes()
+        
     }
 
     config(): void{
@@ -21,6 +23,10 @@ class Server {
 
     routes(): void {
         this.app.use(clientsRoutes)
+    }
+
+    startDb(): void {
+        pool.getConnection()
     }
 
     start(){

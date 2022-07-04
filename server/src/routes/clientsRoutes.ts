@@ -8,7 +8,7 @@ class IndexClientes {
     }
 
     config():void{
-        this.router.get('/', (req,res) => res.send('Hola Mundo'));
+        this.router.get('/hola', (req,res) => res.send('Hola Mundo'));
     }
 }
 

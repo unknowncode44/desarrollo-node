@@ -1,15 +1,16 @@
-CREATE database clinica
+CREATE database example
 
-USE clinica
+USE example
 
-CREATE TABLE paciente(
-    id INT(11) PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE `example`.`exa`(
+    id INT(11) NOT NULL AUTO_INCREMENT,
     nombre VARCHAR(30) NOT NULL,
     apellido VARCHAR(30) NOT NULL,
     dni VARCHAR(8) UNIQUE NOT NULL,
     obra_social VARCHAR(30),
     telefono VARCHAR(11),
     direccion VARCHAR(30) NOT NULL,
-);
+    PRIMARY KEY (`id`), UNIQUE (`dni`)) 
+    ENGINE = InnoDB;
 
-DESCRIBE cliente;
+DESCRIBE exam;

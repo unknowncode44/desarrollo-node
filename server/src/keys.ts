@@ -1,7 +1,9 @@
 export default {
     database: {
         host: 'localhost',
-        user: 'root',
+        user: 'matias',
+        port: 3307,
+        password: 'bulldog',
         database: 'clinica',
     }
 }
