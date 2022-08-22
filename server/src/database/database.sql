@@ -1,8 +1,8 @@
-CREATE database example
+CREATE database clinica
 
-USE example
+USE clinica
 
-CREATE TABLE `example`.`exa`(
+CREATE TABLE `clinica`.`paciente`(
     id INT(11) NOT NULL AUTO_INCREMENT,
     nombre VARCHAR(30) NOT NULL,
     apellido VARCHAR(30) NOT NULL,

@@ -6,8 +6,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const cors_1 = __importDefault(require("cors"));
 const express_1 = __importDefault(require("express"));
 const morgan_1 = __importDefault(require("morgan"));
-const clientsRoutes_1 = __importDefault(require("./routes/clientsRoutes"));
 const database_1 = __importDefault(require("./database"));
+const indexRoutes_1 = __importDefault(require("./routes/indexRoutes"));
 class Server {
     constructor() {
         this.app = (0, express_1.default)();
@@ -21,7 +21,7 @@ class Server {
         this.app.use(express_1.default.json());
     }
     routes() {
-        this.app.use(clientsRoutes_1.default);
+        this.app.use(indexRoutes_1.default);
     }
     startDb() {
         database_1.default.getConnection();

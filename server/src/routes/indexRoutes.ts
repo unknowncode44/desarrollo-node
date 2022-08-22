@@ -9,9 +9,29 @@ class IndexRoutes{
     }
 
     config():void{
-        this.router.get('/', (req, res)=>{
-            res.send('Hola Mundo Cruel')
+        this.router.get('/usuarios', (req, res)=>{
+            res.send({
+                ok: true,
+                listaUsuario: '[lista, de, usuarios]'
+            }
+            )
         });
+
+        this.router.post('/usuario', (req, res)=>{
+            const {nombre, apellido, mail} = req.body
+            res.send({
+                ok: true,
+            }
+            )
+        });
+
+        this.router.put('/usuario/:id', (req, res)=> {
+            console.log(req.params);
+            res.send({
+                ok:true
+            })
+            
+        } )
     }
 }
 
